@@ -4,6 +4,7 @@ export class Login {
     admin = '555'
     constructor() {}
 
+    
     logar(usuario) {
         if(usuario === this.aluno) {
             window.location.href = "aluno.html"

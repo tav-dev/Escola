@@ -1,6 +1,6 @@
 export class Professor  {
-    constructor(nome, matricula) {
+    constructor(nome, usuario) {
         this.nome = nome
-        this.matricula = matricula
+        this.usuario = usuario
     }
 }

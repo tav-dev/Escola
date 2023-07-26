@@ -2,6 +2,7 @@ import TIPO_DE_USUARIO from "./tipoDeUsuario.js"
 import {InvalidArgumentValue} from "../exception/exception.js"
 import { Aluno } from "./aluno.js"
 import { Professor } from "./professor.js"
+import { Turma } from "./turma.js"
 
 export class Secretaria  {
     constructor() {
@@ -16,7 +17,7 @@ export class Secretaria  {
         const select = document.querySelector('#select')
         let valor = select.value
         
-        if(!nome || !nomeDeUsuario === '') throw new InvalidArgumentValue('Campos devem ser Preenchidos!')
+        if(!nome || !nomeDeUsuario) throw new InvalidArgumentValue('Campos devem ser Preenchidos!')
         else if(valor === TIPO_DE_USUARIO.ALUNO) {
             this.aluno.push(new Aluno(nome,nomeDeUsuario))
         } else if(valor === TIPO_DE_USUARIO.PROFESSOR) {
@@ -26,6 +27,6 @@ export class Secretaria  {
         }
     }
     cadastrarTurma(nome) {
-        this.turma.push(nome)
+        this.turma.push(new Turma(nome,null,null))
     }
 }

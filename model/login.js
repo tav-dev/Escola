@@ -3,7 +3,7 @@ export class Login {
     professor = '444'
     admin = '555'
     constructor() {}
-
+    
     
     logar(usuario) {
         if(usuario === this.aluno) {
@@ -17,3 +17,4 @@ export class Login {
         }
     }
 }
+

@@ -1,9 +1,11 @@
 export class Turma {
-    constructor(nome, inicio, fim) {
+    inicio
+    fim
+    constructor(nome) {
+        
         this.nome = nome
-        this.inicio = inicio
-        this.fim = fim
         this.alunos = []
+        this.disciplina = []
 
     }
 

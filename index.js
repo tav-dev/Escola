@@ -3,27 +3,28 @@ import {  Login  } from "./model/login.js"
 import { Secretaria } from "./model/secretaria.js"
 import { Turma } from "./model/turma.js"
 
-
 const inputCadastroNomeDeUsuario = document.querySelector('#cadastroNomeDeUsuario')
 const inputCadastroDeUsuario = document.querySelector('#cadastroDeUsuario')
 const inputCadastroTurma = document.querySelector('#cadastroTurma')
+const inputCadastroDisciplina = document.querySelector('#cadastroDisciplina')
+const btnSalvarDisciplina = document.querySelector('#salvarDisciplina')
 const btnSalvarUsuario = document.querySelector('#salvarUsuario')
 const btnSalvarTurma = document.querySelector('#salvarTurma')
 const inputMatricula = document.querySelector('#matricula')
 const inputEntrar = document.querySelector('#entrar')
 
-btnSalvarUsuario.addEventListener('click', novoUsuario)
-btnSalvarTurma.addEventListener('click', novaTurma)
-// inputEntrar.addEventListener('click', logarUsuario)
+btnSalvarUsuario?.addEventListener('click', novoUsuario)
+btnSalvarDisciplina?.addEventListener('click', novaDisciplina)
+btnSalvarTurma?.addEventListener('click', novaTurma)
+inputEntrar?.addEventListener('submit', logarUsuario)
 
-// const login = new Login()
-const secretaria = new Secretaria(new Turma())
+const login = new Login()
+const secretaria = new Secretaria()
 console.log(secretaria)
 
-// function logarUsuario() {
-//     const matricula = inputMatricula.value
-//     login.logar(matricula)
-// }    
+function logarUsuario() {
+    const matricula = inputMatricula.value    
+}    
 
 function novoUsuario() {
     const inputCadastroNome = inputCadastroNomeDeUsuario.value
@@ -33,9 +34,15 @@ function novoUsuario() {
 
 function novaTurma() {
     const novaTurma = inputCadastroTurma.value
-    secretaria.cadastrarTurma(novaTurma)
+    const novaInstanciaTurma = new Turma(novaTurma);
+    secretaria.cadastrarTurma(novaInstanciaTurma)
     console.log(novaTurma)
 }
 
+function novaDisciplina() {
+    const novaDisciplina = inputCadastroDisciplina.value
+    secretaria.cadastrarDisciplina(novaDisciplina)
+
+}
 
 

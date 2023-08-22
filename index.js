@@ -12,11 +12,14 @@ const btnSalvarUsuario = document.querySelector('#salvarUsuario')
 const btnSalvarTurma = document.querySelector('#salvarTurma')
 const inputMatricula = document.querySelector('#matricula')
 const inputEntrar = document.querySelector('#entrar')
+const mostraDisciplinas = document.querySelector('#valorSelect')
 
 btnSalvarUsuario?.addEventListener('click', novoUsuario)
 btnSalvarDisciplina?.addEventListener('click', novaDisciplina)
 btnSalvarTurma?.addEventListener('click', novaTurma)
 inputEntrar?.addEventListener('submit', logarUsuario)
+mostraDisciplinas?.addEventListener('click', mostraDisciplina)
+// addEventListener('focus')
 
 const login = new Login()
 const secretaria = new Secretaria()
@@ -43,6 +46,13 @@ function novaDisciplina() {
     const novaDisciplina = inputCadastroDisciplina.value
     secretaria.cadastrarDisciplina(novaDisciplina)
 
+}
+
+function mostraDisciplina () {
+    const disciplina =  secretaria.srvStorage.getItem('Disciplina')
+    // console.log(disciplina)
+    secretaria.pegarTurmasPorDisciplina(disciplina)
+    
 }
 
 

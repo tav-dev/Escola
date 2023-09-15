@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configurar Turma</title>
+  </head>
+
+  <body>
+    <h3 style="text-align: center">Configuração de Turma</h3>
+    <div style="display: flex; justify-content: center">
+      <div style="display: flex; flex-direction: column; width: 200px">
+        <a
+          style="text-align: center"
+          id="aVoltar"
+          href="../../secretaria/secretaria.html"
+          >voltar</a
+        >
+        <br />
+        <select id="selectTurma" place>
+          <option default>Selecione uma Turma</option>
+        </select>
+        <br />
+        <input type="time" placeholder=" inicio " id="inicio" />
+        <br />
+        <input type="time" placeholder=" término " id="termino"/>
+        <br />
+        <div>
+          <input type="checkbox" name="segunda" id="segunda" /> segunda
+          <input type="checkbox" name="terça" id="terça" /> terça
+          <input type="checkbox" name="quarta" id="quarta" /> quarta
+          <input type="checkbox" name="quinta" id="quinta" /> quinta
+          <input type="checkbox" name="sexta" id="sexta" /> sexta
+        </div>
+        <br />
+        <select id="selectDisciplina" place>
+          <option>Selecione a Disciplina</option>
+        </select>
+        <button id="btn-adicionar">Adicionar</button>
+        <div>
+          <ul
+            style="align-items: start; list-style-type: none"
+            id="render-disciplina"
+          ></ul>
+        </div>
+        <br />
+        <button id="buttonSalvar">salvar</button>
+        <label id="labelErro" style="color: red"></label>
+      </div>
+    </div>
+  </body>
+
+  <script src="../configuracao-Turma/configura-turma.js" type="module"></script>
+</html>
